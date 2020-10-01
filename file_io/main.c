@@ -14,24 +14,24 @@ int main() {
 	int fd, i, n, rno, found=0;
 	char buff[32];
 	fd = open("students.txt", O_RDWR | O_CREAT | O_TRUNC, 0755);
-	printf("Enter number of students : ");
+	printf("Enter Number of Students : ");
 	fgets(buff, 32, stdin);
 	trim(buff);
 	n = atoi(buff);
 	for (i=0; i<n; i++) {
 		printf("Student %d\n", i+1);
 
-		printf("Enter rno : ");
+		printf("Enter Roll No. : ");
 		fgets(buff, 32, stdin);
 		trim(buff);
 		write(fd, buff, sizeof(buff));
 
-		printf("Enter name : ");
+		printf("Enter Name : ");
 		fgets(buff, 32, stdin);
 		trim(buff);
 		write(fd, buff, sizeof(buff));
 
-		printf("Enter branch : ");
+		printf("Enter Branch : ");
 		fgets(buff, 32, stdin);
 		trim(buff);
 		write(fd, buff, sizeof(buff));
@@ -39,7 +39,7 @@ int main() {
 		
 	}
 	lseek(fd, 0, SEEK_SET);
-	printf("Enter rno of student to read : ");
+	printf("Enter Roll No. of Student to Read : ");
 	fgets(buff, 32, stdin);
 	rno = atoi(buff);
 	printf("\n");
